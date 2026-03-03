@@ -1,7 +1,7 @@
 package Univille.EcoPlan.entity;
 
 import jakarta.persistence.*;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.time.LocalDateTime;
 
 @Entity
@@ -12,12 +12,23 @@ public class Usuario {
     private String nome;
     private String cpf;
     private String email;
+    private String localizacao;
+    @JsonIgnore
+    private String senha;
 
-    public long getId() {
+    @Column(updatable = false)
+    private LocalDateTime dataCriacao;
+
+    @PrePersist
+    protected void onCreate() {
+        this.dataCriacao = LocalDateTime.now();
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -69,14 +80,5 @@ public class Usuario {
         this.dataCriacao = dataCriacao;
     }
 
-    private String localizacao;
-    private String senha;
 
-    @Column(updatable = false)
-    private LocalDateTime dataCriacao;
-
-    @PrePersist
-    protected void onCreate() {
-        this.dataCriacao = LocalDateTime.now();
-    }
 }

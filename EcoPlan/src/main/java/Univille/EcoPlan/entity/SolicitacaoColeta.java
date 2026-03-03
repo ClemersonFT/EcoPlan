@@ -17,7 +17,7 @@ public class SolicitacaoColeta {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -54,6 +54,6 @@ public class SolicitacaoColeta {
     }
 
     @ManyToOne
-    @JoinColumn(name = "objeto_id", nullable = false)
+    @JoinColumn(name = "objeto_id")
     private Objeto objeto;
 }

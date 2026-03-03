@@ -21,7 +21,7 @@ public class Objeto {
         this.descricao = descricao;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -52,8 +52,5 @@ public class Objeto {
     public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
-
-
-
 
 }

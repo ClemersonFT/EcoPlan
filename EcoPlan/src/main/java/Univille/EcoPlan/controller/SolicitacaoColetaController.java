@@ -18,7 +18,7 @@ public class SolicitacaoColetaController {
         this.solicitacaoColetaService = solicitacaoColetaService;
     }
 
-    @PostMapping("/Usuario/{usuarioId}")
+    @PostMapping("/usuario/{usuarioId}")
     public ResponseEntity<SolicitacaoColeta> solicitarColeta(@RequestBody SolicitacaoColeta solicitacaoColeta,
                                                              @PathVariable Long usuarioId){
 

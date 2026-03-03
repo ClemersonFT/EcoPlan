@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface ObjetoRepository extends JpaRepository<Objeto,Long> {
 
-    List<Objeto> findByTipoContainingIgnoreCase(String nome);
+    List<Objeto> findByTipoContainingIgnoreCase(String tipo);
 }

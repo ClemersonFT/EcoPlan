@@ -20,7 +20,11 @@ public class ObjetoService {
         return objetoRepository.findAll();
     }
 
-    public Optional<Objeto> buscarPorId(Long id) {
+    public List<Objeto> buscarPorNome(String tipo) {
+        return objetoRepository.findByTipoContainingIgnoreCase(tipo);
+    }
+
+    public Optional<Objeto> buscarPorId (Long id){
         return objetoRepository.findById(id);
     }
 }

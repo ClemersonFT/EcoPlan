@@ -2,7 +2,8 @@ package Univille.EcoPlan.dto;
 
 public class ChamadoLogin {
     private String email;
-
+      private String senha;
+    
     public String getSenha() {
         return senha;
     }
@@ -18,6 +19,5 @@ public class ChamadoLogin {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    private String senha;
 }
+

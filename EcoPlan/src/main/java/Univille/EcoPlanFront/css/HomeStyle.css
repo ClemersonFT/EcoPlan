@@ -1,0 +1,124 @@
+body{
+    margin: 0;
+    background-color: #7F943F;
+}
+
+header{
+    background-color: #d0dda8;
+    height: 40px;
+    position: relative;
+}
+
+.login {
+    position: absolute;
+    top: 0;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.destaque {
+    margin-top: 80px;
+}
+
+.titulo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+    font-size: 150px;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.texto {
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+.pesquisa {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+.campo-pesquisa {
+    width: 50%;
+    padding: 17px;
+    padding-left: 35px;
+    font-size: 20px;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.4);
+}
+
+.campo-pesquisa::placeholder {
+    font-size: 20px;
+    color: #888;
+    font-style: italic;
+}
+
+.lupa {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 26%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hero {
+    position: relative;
+    margin-top: 150px;
+    height: 100vh;
+    overflow: hidden;
+} 
+
+.hero-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(to bottom, #7F943F 0%, rgba(127,148,63,0) 30%),
+        url("/img/natureza.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    transition: filter 0.2s linear;
+}
+
+.direcionamento,
+.contato {
+    position: relative;
+    z-index: 2;
+}
+
+.direcionamento {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    margin-top: 40px;
+    padding-top: 120px;
+}
+
+.direcao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0px;
+    font-size: 40px;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.seta {
+    color:white;
+    font-size:30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}

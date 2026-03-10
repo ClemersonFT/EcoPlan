@@ -1,0 +1,273 @@
+body{
+    margin: 0;
+    background-color: #7F943F;
+}
+
+header{
+    background-color: #d0dda8;
+    height: 40px;
+    position: relative;
+}
+
+.login {
+    position: absolute;
+    top: 0;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.destaque {
+    margin-top: 80px;
+}
+
+.titulo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+    font-size: 150px;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.texto {
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+.pesquisa {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+.campo-pesquisa {
+    width: 50%;
+    padding: 17px;
+    padding-left: 35px;
+    font-size: 20px;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.4);
+}
+
+.campo-pesquisa::placeholder {
+    font-size: 20px;
+    color: #888;
+    font-style: italic;
+}
+
+.lupa {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 26%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hero {
+    position: relative;
+    margin-top: 150px;
+    height: 100vh;
+    overflow: hidden;
+} 
+
+.hero-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(to bottom, #7F943F 0%, rgba(127,148,63,0) 30%),
+        url("/img/natureza.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    transition: filter 0.2s linear;
+}
+
+.direcionamento,
+.contato {
+    position: relative;
+    z-index: 2;
+}
+
+.direcionamento {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    margin-top: 40px;
+    padding-top: 120px;
+}
+
+.direcao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0px;
+    font-size: 40px;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.seta {
+    color:white;
+    font-size:30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.contato {
+    display: flex; 
+    flex-direction: column;
+    width: 40%;
+    padding-left:150px;
+}
+
+.apresentacao,
+.introducao,
+.fundo {
+    opacity: 0;
+    transition: opacity 0.2s linear;
+}
+
+.fundo {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 30px;
+    width: 70%;
+}
+
+.apresentacao {
+    display: flex; 
+    margin-top: 0px;
+    padding-left: 10px;
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 80px;
+}
+
+.introducao {
+    display: flex; 
+    margin-top: 10px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    max-width: 600px;
+}
+
+.opcoes{
+    position: absolute;
+    right: 150px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.opcao{
+    width: 400px;
+    height: 400px;
+    background-color: rgba(0,0,0,0.6);
+    border: none;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+    opacity: 0;
+}
+
+.opcao p{
+    color: #ffffff;
+    font-size: 40px;
+    margin: 0;
+}
+
+.opcao:nth-child(3){
+    grid-column: span 2;
+    justify-self: center;
+}
+
+.opcao:hover{
+    transform: scale(1.05);
+}
+
+.opcao:active{
+    transform: scale(0.97);
+}
+
+.icone{
+    width: 150px;
+    margin-bottom: 10px;
+    filter: brightness(0) invert(1);
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(8px);
+    z-index: 999;
+}
+
+.modal.ativo{
+    display: flex;
+}
+
+.modal-conteudo{
+    background: #1f1f1f;
+    color: white;
+    padding: 40px;
+    border-radius: 25px;
+    width: 420px;
+    text-align: left;
+    box-shadow: 0px 20px 40px rgba(0,0,0,0.5);
+}
+
+.modal-conteudo h2{
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.modal-conteudo p{
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.login-email{
+    width: 100%;
+    padding: 15px;
+    background: #333;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.login-email:hover{
+    background: #444;
+}
+
+.modal-conteudo a{
+    color: white;
+    text-decoration: underline;
+}

@@ -6,15 +6,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/HomeStyle.css">
+    <link rel="stylesheet" href="css/homeStyle.css">
     <title>home</title>
 </head>
 <body>
-    <div class="bg"></div>
     <main class="container">
         <header>
             <div>
-                <a class="login" href="">Login</a>
+                <button class="login">Login</button>
             </div>
         </header>
         <section class="destaque">
@@ -35,12 +34,41 @@
             </div>
             
             <div class="contato">
-                <h1 class="apresentacao">
-                Quem somos<br>nós?
-                </h1>
+                <div class="fundo">
+                    <h1 class="apresentacao">
+                        Quem somos<br>nós?
+                    </h1>
+                    <p class="introducao">
+                        Somos uma iniciativa voltada à promoção do descarte consciente e da responsabilidade ambiental. Nosso objetivo é conectar cidadãos, instituições de coleta e órgãos competentes por meio de uma plataforma simples, acessível e eficiente.
+                    </p>
+                </div>
+            </div>
+            <div class="opcoes">
+                <button class="opcao">
+                    <img class="icone" src="img/caminhao.png" alt="caminhão">
+                    <p>Coleta</p>
+                </button>
+                <button class="opcao">
+                    <img class="icone" src="img/apito.png" alt="denuncia">
+                    <p>Denuncie</p>
+                </button>
+                <button class="opcao">
+                    <img class="icone" src="img/suporte.png" alt="suporte">
+                    <p>Suporte</p>
+                </button>
             </div>
         </section>
     </main>
+    <div class="modal" id="login-modal">
+        <div class="modal-conteudo">
+            <h2>Faça login ou registre-se em segundos</h2>
+            <p>Use seu e-mail para entrar.</p>
+            <button class="login-email">
+                Continua com e-mail
+            </button>
+            <a href="cadastro.html">Cadastrar</a>
+        </div>
+    </div>
     <script src="/js/script.js"></script>
 </body>
 </html>

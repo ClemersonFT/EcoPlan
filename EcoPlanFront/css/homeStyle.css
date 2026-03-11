@@ -25,11 +25,11 @@ header{
 }
 
 .titulo {
-    margin-top: 0.1em;
+    margin-top: 0.5em;
     margin-bottom: 0.01em;
     text-align: center;
     color: white;
-    font-size: 150px;
+    font-size: clamp(4rem, 10vw, 9rem);
     font-family: 'Kaushan Script', cursive;
 }
 
@@ -37,7 +37,7 @@ header{
     text-align: center;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
+    font-size: clamp(1.3rem, 2.5vw, 2rem);
 }
 
 .pesquisa {
@@ -45,16 +45,19 @@ header{
     justify-content: center;
     margin-top: 20px;
     position: relative;
+    width: min(90%, 900px);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .campo-pesquisa {
-    width: 50%;
-    padding: 17px;
-    padding-left: 35px;
+    width: 100%;
+    padding: 17px 60px 17px 35px;
     font-size: 20px;
     border: none;
     border-radius: 50px;
     box-shadow: 0px 2px 5px rgba(0,0,0,0.4);
+    box-sizing: border-box;
 }
 
 .campo-pesquisa::placeholder {
@@ -67,23 +70,43 @@ header{
     width: 25px;
     height: 25px;
     position: absolute;
-    right: 26%;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
 }
 
 .hero {
+  position: relative;
+  margin-top: 5em;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-conteudo {
     position: relative;
-    margin-top: 1em;
-    height: 100vh;
-    overflow: hidden;
-} 
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 3rem;
+    box-sizing: border-box;
+}
 
 .hero-img {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-
     background:
         linear-gradient(to bottom, #7F943F 0%, rgba(127,148,63,0) 30%),
         url("/img/natureza.jpg");
@@ -99,24 +122,30 @@ header{
     z-index: 2;
 }
 
-.direcionamento {
+.direcionamento{
+    position: fixed;
+    left: 50%;
+    bottom: clamp(12px, 4vh, 28px);
+    transform: translateX(-50%);
     display: flex;
-    flex-direction: column; 
-    align-items: center;    
-    margin-top: 1em;
-    padding-top: 1em;
+    flex-direction: column;
+    align-items: center;
+    z-index: 50;
+    bottom: calc(clamp(12px, 4vh, 28px) + env(safe-area-inset-bottom, 0px));
 }
 
 .direcao {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: 0px;
-    font-size: 40px;
-    cursor: pointer;
-    color: white;
-    transition: transform 0.3s ease;
+  margin: 0;
+  font-size: 40px;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  line-height: 1.05;
+}
+
+@keyframes bounceDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
 }
 
 .seta {
@@ -124,13 +153,9 @@ header{
     font-size:30px;
     cursor: pointer;
     transition: transform 0.3s ease;
-}
-
-.contato {
-    display: flex; 
-    flex-direction: column;
-    width: 40%;
-    padding-left:5em;
+    display: block;
+    line-height: 1;
+    animation: bounceDown 1.2s ease-in-out infinite;
 }
 
 .apresentacao,
@@ -140,11 +165,18 @@ header{
     transition: opacity 0.2s linear;
 }
 
+.contato{
+    flex: 0 1 520px;   
+    max-width: 520px;
+    margin-top: 0;     
+}
+
 .fundo {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 2em;
     border-radius: 30px;
-    width: 70%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .apresentacao {
@@ -162,23 +194,28 @@ header{
     margin-top: 0.1em;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2em;
+    font-size: 1em;
     max-width: 600px;
 }
 
 .opcoes{
-    position: absolute;
-    right: 150px;
-    top: 50%;
-    transform: translateY(-50%);
+    flex: 0 1 720px;   
+    max-width: 720px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    grid-template-columns: repeat(2, minmax(240px, 320px));
+    gap: 1.5rem;
+    justify-content: center; 
+    justify-items: center;    
 }
 
-.opcao{
-    width: 20em;
-    height: 20em;
+#secao-opcoes{
+    scroll-margin-top: 24px;
+}
+
+.opcao {
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 1 / 1;
     background-color: rgba(0,0,0,0.6);
     border: none;
     border-radius: 25px;
@@ -198,7 +235,7 @@ header{
 }
 
 .opcao:nth-child(3){
-    grid-column: span 2;
+    grid-column: 1 / -1;
     justify-self: center;
 }
 
@@ -273,4 +310,129 @@ header{
 .modal-conteudo a{
     color: white;
     text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+    .hero {
+        padding: 2rem;
+    }
+
+    .hero-conteudo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .direcionamento {
+    padding-top: 2rem;
+    margin-bottom: 1rem;
+    }
+
+    .contato {
+        max-width: 700px;
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+    .fundo {
+        width: 100%;
+    }
+
+    .opcoes {
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        justify-items: center;
+    }
+
+    .opcao {
+        max-width: 260px;
+    }
+
+    .icone {
+        width: 110px;
+    }
+
+    .opcao p {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .titulo {
+        font-size: clamp(3rem, 14vw, 5rem);
+    }
+
+    .texto {
+        font-size: 1.4rem;
+        padding: 0 1rem;
+    }
+
+    .direcao {
+        font-size: 2rem;
+    }
+
+    .direcionamento {
+    padding-top: 1rem;
+    }
+
+    .seta {
+        font-size: 1.5rem;
+    }
+
+    .opcoes {
+        grid-template-columns: 1fr;
+    }
+
+    .opcao:nth-child(3) {
+        grid-column: span 1;
+    }
+
+    .opcao {
+        max-width: 300px;
+    }
+
+    .apresentacao {
+        font-size: 2.2rem;
+    }
+
+    .introducao {
+        font-size: 1rem;
+    }
+
+    .modal-conteudo {
+        width: 90%;
+        max-width: 420px;
+        box-sizing: border-box;
+    }
+}
+
+@media (min-width: 1400px) {
+  .hero-conteudo {
+    max-width: 1600px;
+    padding: 3.5rem 4rem;
+    gap: 5rem;
+  }
+
+  .contato {
+    flex: 0 1 600px;
+    max-width: 600px;
+  }
+
+  .opcoes {
+    flex: 0 1 900px;
+    max-width: 900px;
+    grid-template-columns: repeat(2, minmax(300px, 400px));
+    gap: 2rem;
+  }
+
+  .opcao {
+    max-width: 400px;
+  }
+
+  .icone {
+    width: 170px;
+  }
+
+  .opcao p {
+    font-size: 46px;
+  }
 }

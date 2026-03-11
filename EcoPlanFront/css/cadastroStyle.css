@@ -1,0 +1,206 @@
+:root{
+  --green-900: #063b22;
+  --green-800: #0a4a2b;
+  --green-700: #0e5a34;
+  --text: #1b1b1b;
+  --muted: #6b6b6b;
+  --border: #d7d7d7;
+  --bg: #ffffff;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: #7F943F;
+}
+
+
+.page{
+  min-height: 100vh;  
+  min-height: 100dvh; 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.promo{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: clamp(24px, 5vw, 56px);
+  color: white;
+  text-align: center;
+
+  background:
+    linear-gradient(rgba(6, 59, 34, 0.55), rgba(6, 59, 34, 0.55)),
+    url("/img/natureza2.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.promo__content{
+  max-width: 520px;
+}
+
+.promo__logo{
+  font-family: 'Kaushan Script', cursive;
+  font-size: clamp(56px, 6vw, 92px);
+  margin: 0 0 12px 0;
+  letter-spacing: 0.5px;
+}
+
+.promo__tagline{
+  margin: 0;
+  font-size: clamp(22px, 2.2vw, 34px);
+  line-height: 1.25;
+  opacity: 0.95;
+}
+
+.panel{
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: clamp(22px, 4vw, 52px);
+}
+
+.panel__inner{
+  width: min(520px, 100%);
+}
+
+.panel__title{
+  margin: 0 0 22px 0;
+  text-align: center;
+  font-size: clamp(28px, 2.5vw, 42px);
+  color: var(--green-800);
+  font-weight: 800;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field__label{
+  font-weight: 700;
+  color: var(--green-800);
+}
+
+.field__control{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.field__icon{
+  color: #8a8a8a;
+  display: inline-flex;
+}
+
+.field__control input{
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.field__control:focus-within{
+  border-color: var(--green-700);
+  box-shadow: 0 0 0 3px rgba(14, 90, 52, 0.15);
+}
+
+.field__hint{
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.field__error{
+  margin: 0;
+  min-height: 16px;
+  font-size: 13px;
+  color: #b00020;
+}
+
+.check{
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: #3b3b3b;
+  margin-top: 4px;
+}
+
+.check input{
+  margin-top: 3px;
+}
+
+.link{
+  color: var(--green-700);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.link:hover{
+  text-decoration: underline;
+}
+
+.link--strong{
+  font-weight: 800;
+}
+
+.btn{
+  margin-top: 8px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 16px 18px;
+
+  background: var(--green-800);
+  color: white;
+  font-size: 18px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.btn:hover{
+  background: var(--green-700);
+}
+
+.panel__foot{
+  margin: 10px 0 0 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 900px){
+  .page{
+    grid-template-columns: 1fr;
+  }
+
+  .promo{
+    min-height: 38vh;
+  }
+
+  .panel{
+    align-items: flex-start;
+  }
+}

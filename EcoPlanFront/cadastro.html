@@ -1,11 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/cadastroStyle.css" />
+    <title>Criar conta</title>
 </head>
-<body>
-    
-</body>
-</html>
+    <body>
+    <div class="page">
+        <section class="promo" aria-label="Apresentação do EcoPlan">
+        <div class="promo__content">
+            <div class="promo__brand">
+                <h1 class="promo__logo">EcoPlan</h1>
+            </div>
+            <p class="promo__tagline">
+                Conecte-se de forma sustentável. Juntos<br />
+                por um futuro mais verde.
+            </p>
+        </div>
+        </section>
+
+        <main class="panel">
+        <div class="panel__inner">
+            <h2 class="panel__title">Criar sua conta</h2>
+
+            <form class="form" id="signup-form" action="#" method="post" novalidate>
+            <div class="field">
+                <label class="field__label" for="nome">Nome completo</label>
+                <div class="field__control">
+                <span class="field__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="18" height="18">
+                    <path fill="currentColor" d="M12 12a4 4 0 1 0-4-4a4 4 0 0 0 4 4Zm0 2c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5Z"/>
+                    </svg>
+                </span>
+                <input
+                    id="nome"
+                    name="nome"
+                    type="text"
+                    placeholder="Seu nome"
+                    autocomplete="name"
+                    required
+                />
+                </div>
+                <p class="field__error" id="err-nome" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+                <label class="field__label" for="email">Email</label>
+                <div class="field__control">
+                <span class="field__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="18" height="18">
+                    <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5Z"/>
+                    </svg>
+                </span>
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Seu@email.com"
+                    autocomplete="email"
+                    required
+                />
+                </div>
+                <p class="field__error" id="err-email" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+                <label class="field__label" for="senha">Senha</label>
+                <div class="field__control">
+                <span class="field__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="18" height="18">
+                    <path fill="currentColor" d="M17 9h-1V7a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2Zm-7-2a2 2 0 0 1 4 0v2h-4Z"/>
+                    </svg>
+                </span>
+                <input
+                    id="senha"
+                    name="senha"
+                    type="password"
+                    placeholder="••••••"
+                    autocomplete="new-password"
+                    required
+                    minlength="6"
+                />
+                </div>
+                <p class="field__hint">Use pelo menos 6 caracteres.</p>
+                <p class="field__error" id="err-senha" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+                <label class="field__label" for="confirmar">Confirmar senha</label>
+                <div class="field__control">
+                <span class="field__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="18" height="18">
+                    <path fill="currentColor" d="M17 9h-1V7a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2Zm-7-2a2 2 0 0 1 4 0v2h-4Z"/>
+                    </svg>
+                </span>
+                <input
+                    id="confirmar"
+                    name="confirmar"
+                    type="password"
+                    placeholder="••••••"
+                    autocomplete="new-password"
+                    required
+                    minlength="6"
+                />
+                </div>
+                <p class="field__error" id="err-confirmar" aria-live="polite"></p>
+            </div>
+
+            <label class="check">
+                <input id="termos" name="termos" type="checkbox" required />
+                <span>
+                Concordo com os
+                <a href="#" class="link">Termos de Uso</a>
+                e
+                <a href="#" class="link">Política de Privacidade</a>
+                </span>
+            </label>
+
+            <button class="btn" type="submit">Criar conta</button>
+
+            <p class="panel__foot">
+                Já tem uma conta?
+                <a class="link link--strong" href="home.html">Faça login</a>
+            </p>
+            </form>
+        </div>
+        </main>
+    </div>
+
+    <script src="js/scriptCadastro.js"></script>
+    </body>
+    </html>
